@@ -5,9 +5,6 @@ class Book:
       self.is_available = True
     
     def __str__(self):
-       print(self.title, self.author)
-
-
-
+       return self.title + " " + self.author
 
 

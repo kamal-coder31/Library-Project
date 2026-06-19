@@ -1,7 +1,12 @@
 from book import Book
+from library import Library
+
+lib = Library()
 
 book1 = Book("Harry Potter", "J.K. Rowling")
 book2 = Book ("The A1chemist", "Pualo Coelho")
 
-print(book1.title, book1.author)
-print(book2.title, book2.author)
+lib.add_book(book1)
+lib.add_book(book2)
+
+lib.show_books()
