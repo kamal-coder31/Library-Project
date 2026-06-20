@@ -11,6 +11,8 @@ class User:
             self.borrowed_books.remove(book)
     
     def show_user_books(self):
-       print(f"{self.name} has borrowed:")
-       for book in self.borrowed_books:
-          print(book)
+      if len(self.borrowed_books)==0:
+          print("no books borrowed")
+      else:
+          for book in self.borrowed_books:
+              print(book.title, "-", book.author)
