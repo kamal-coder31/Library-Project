@@ -14,10 +14,14 @@ while True:
     print("4. Show user books")
     print("5. Exit")
 
-    choice = input("Enter choice: ")
+    try:
+      choice = int(input("Enter choice: "))
+    except ValueError:
+         print("Invalid input, Please enter a number .")
+         continue
 
     #1. ADD BOOK
-    if choice == "1":
+    if choice == 1:
         title = input("Enter book title: ")
         author = input("Enter author: ")
         book = Book(title, author)
@@ -25,11 +29,11 @@ while True:
         print("Book added successfully!")
 
     # 2.SHOW BOOKS
-    elif choice == "2":
+    elif choice == 2:
      library.show_books()
 
     # 3.BORROW BOOK
-    elif choice == "3":
+    elif choice == 3:
        title = input ("Enter book title to borrow: ")
        for book in library.books:
           if book.title == title:
@@ -41,16 +45,15 @@ while True:
              print("Book not found!")
 
     # 4. SHOW USER BOOKS
-    elif choice == "4":
+    elif choice == 4:
        user1.show_user_books()
 
     # 5. EXIT
-    elif choice == "5":
-        print("Exiting system...")
-        break
+    elif choice == 5:
+     print("Exiting system...")
+     break
 
     else:
-       print("Invalid choice!")
+     print("Invalid choice!")
           
-
 
