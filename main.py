@@ -4,6 +4,7 @@ from user import User
 from borrow import Borrow
 
 library = Library()
+library.load_books()
 user1 = User("Kamal")
 
 while True:
@@ -27,6 +28,7 @@ while True:
         book = Book(title, author)
         library.add_book(book)
         print("Book added successfully!")
+        library.save_books()
 
     # 2.SHOW BOOKS
     elif choice == 2:
@@ -56,4 +58,3 @@ while True:
     else:
      print("Invalid choice!")
           
-
